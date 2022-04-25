@@ -5,8 +5,144 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calendar"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Calendar" Height="500" Width="400" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <!-- TextBlock Style -->
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="1"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="TextAlignment" Value="Left"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
         
-    </Grid>
+        <!-- Button Style -->
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="1"/>
+            <Setter Property="Background" Value="#262525"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="BorderBrush" Value="#262525"/>
+        </Style>
+        
+        <!-- Grid Style -->
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="#262525"/>
+        </Style>
+
+        <Style TargetType="Border">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#3f403f"/>
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        </Style>
+    </Window.Resources>
+
+    <!-- Main Grid -->
+    <Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <!-- Clock Grid -->
+            <Border Grid.Row="0">
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label FontSize="48" Padding="15, 4,0,0" x:Name="labelClock"></Label>
+                    <Label Grid.Row="1" Padding="15, 4,0,0" Content="25 Апреля 2022 г."></Label>
+                </Grid>
+            </Border>
+            
+            <!-- Buttons Grid -->
+            <Border Grid.Row="1">
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Controls -->
+                    <TextBlock Grid.Column="0" Grid.Row="1">Пн</TextBlock>
+                    <TextBlock Grid.Column="1" Grid.Row="1">Вт</TextBlock>
+                    <TextBlock Grid.Column="2" Grid.Row="1">Ср</TextBlock>
+                    <TextBlock Grid.Column="3" Grid.Row="1">Чт</TextBlock>
+                    <TextBlock Grid.Column="4" Grid.Row="1">Пт</TextBlock>
+                    <TextBlock Grid.Column="5" Grid.Row="1">Сб</TextBlock>
+                    <TextBlock Grid.Column="6" Grid.Row="1">Вс</TextBlock>
+                    <Button Grid.Column="0" Grid.ColumnSpan="3" HorizontalContentAlignment="Left" Content="Апрель 2022" Padding="15,0"/>
+                    <Button Grid.Column="5" Content="˄"/>
+                    <Button Grid.Column="6" Content="˅"/>
+                    <Button Grid.Column="0" Grid.Row="2" x:Name="button1" Foreground="DarkGray">28</Button>
+                    <Button Grid.Column="1" Grid.Row="2" x:Name="button2" Foreground="DarkGray">29</Button>
+                    <Button Grid.Column="2" Grid.Row="2" x:Name="button3" Foreground="DarkGray">30</Button>
+                    <Button Grid.Column="3" Grid.Row="2" x:Name="button4" Foreground="DarkGray">31</Button>
+                    <Button Grid.Column="4" Grid.Row="2" x:Name="button5">1</Button>
+                    <Button Grid.Column="5" Grid.Row="2" x:Name="button6">2</Button>
+                    <Button Grid.Column="6" Grid.Row="2" x:Name="button7">3</Button>
+                    <Button Grid.Column="0" Grid.Row="3" x:Name="button8">4</Button>
+                    <Button Grid.Column="1" Grid.Row="3" x:Name="button9">5</Button>
+                    <Button Grid.Column="2" Grid.Row="3" x:Name="button10">6</Button>
+                    <Button Grid.Column="3" Grid.Row="3" x:Name="button11">7</Button>
+                    <Button Grid.Column="4" Grid.Row="3" x:Name="button12">8</Button>
+                    <Button Grid.Column="5" Grid.Row="3" x:Name="button13">9</Button>
+                    <Button Grid.Column="6" Grid.Row="3" x:Name="button14">10</Button>
+                    <Button Grid.Column="0" Grid.Row="4" x:Name="button15">11</Button>
+                    <Button Grid.Column="1" Grid.Row="4" x:Name="button16">12</Button>
+                    <Button Grid.Column="2" Grid.Row="4" x:Name="button17">13</Button>
+                    <Button Grid.Column="3" Grid.Row="4" x:Name="button18">14</Button>
+                    <Button Grid.Column="4" Grid.Row="4" x:Name="button19">15</Button>
+                    <Button Grid.Column="5" Grid.Row="4" x:Name="button20">16</Button>
+                    <Button Grid.Column="6" Grid.Row="4" x:Name="button21">17</Button>
+                    <Button Grid.Column="0" Grid.Row="5" x:Name="button22">18</Button>
+                    <Button Grid.Column="1" Grid.Row="5" x:Name="button23">19</Button>
+                    <Button Grid.Column="2" Grid.Row="5" x:Name="button24">20</Button>
+                    <Button Grid.Column="3" Grid.Row="5" x:Name="button25">21</Button>
+                    <Button Grid.Column="4" Grid.Row="5" x:Name="button26">22</Button>
+                    <Button Grid.Column="5" Grid.Row="5" x:Name="button27">23</Button>
+                    <Button Grid.Column="6" Grid.Row="5" x:Name="button28">24</Button>
+                    <Button Grid.Column="0" Grid.Row="6" x:Name="button29">25</Button>
+                    <Button Grid.Column="1" Grid.Row="6" x:Name="button30">26</Button>
+                    <Button Grid.Column="2" Grid.Row="6" x:Name="button31">27</Button>
+                    <Button Grid.Column="3" Grid.Row="6" x:Name="button32">28</Button>
+                    <Button Grid.Column="4" Grid.Row="6" x:Name="button33">29</Button>
+                    <Button Grid.Column="5" Grid.Row="6" x:Name="button34">30</Button>
+                    <Button Grid.Column="6" Grid.Row="6" x:Name="button35" Foreground="DarkGray">1</Button>
+                    <Button Grid.Column="0" Grid.Row="7" x:Name="button36" Foreground="DarkGray">2</Button>
+                    <Button Grid.Column="1" Grid.Row="7" x:Name="button37" Foreground="DarkGray">3</Button>
+                    <Button Grid.Column="2" Grid.Row="7" x:Name="button38" Foreground="DarkGray">4</Button>
+                    <Button Grid.Column="3" Grid.Row="7" x:Name="button39" Foreground="DarkGray">5</Button>
+                    <Button Grid.Column="4" Grid.Row="7" x:Name="button40" Foreground="DarkGray">6</Button>
+                    <Button Grid.Column="5" Grid.Row="7" x:Name="button41" Foreground="DarkGray">7</Button>
+                    <Button Grid.Column="6" Grid.Row="7" x:Name="button42" Foreground="DarkGray">8</Button>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
 </Window>
